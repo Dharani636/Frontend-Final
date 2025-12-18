@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./Image/Logo.jpg">
+</head>
+<body>
+    <div class="main">
+        <form id="register-form">
+            <h1>Register</h1>
+
+            <div class="input-box">
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="input-box">
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="./index.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password === confirmPassword) {
+                // Save username and password to localStorage
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+
+                alert('Registration successful! Redirecting to login...');
+
+                // ✅ Redirect to login page
+                window.location.href = "./index.html";
+
+            } else {
+                alert('Passwords do not match!');
+            }
+        });
+    </script>
+
+
+    <style>
+        
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url(./Image/Image\ 4.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main {
+            position: relative;
+            width: 420px;
+            background-color: rgba(20, 5, 10, 0.3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .main h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .main .input-box {
+            width: 100%;
+            height: 50px;
+            margin: 15px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            font-size: 16px;
+            padding: 20px 45px 20px 20px;
+            color: white;
+        }
+
+        .input-box input::placeholder {
+            color: aliceblue;
+        }
+
+        .terms {
+            margin: 20px 0;
+            font-size: 14.5px;
+        }
+
+        .terms a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        .terms label input {
+            accent-color: white;
+            margin-right: 3px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            color: blue;
+            border: none;
+            border-radius: 40px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-link a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</body>
+</html>
