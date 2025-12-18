@@ -3,56 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Register Page</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <link rel="icon" href="./Image/Logo.jpg">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="main">
-        <form id="login-form">
-            <h1>Login</h1>
+        <form id="register-form">
+            <h1>Register</h1>
 
             <div class="input-box">
-                <input type="text" id="login-username" placeholder="Username" required>
+                <input type="text" id="username" placeholder="Username" required>
             </div>
             <div class="input-box">
-                <input type="password" id="login-password" placeholder="Password" required>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <div class="input-box">
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
             </div>
 
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn">Register</button>
 
-            <div class="register-link">
-                <p>Don't have an account? <a href="./register.html">Register</a></p>
+            <div class="login-link">
+                <p>Already have an account? <a href="./index.html">Login</a></p>
             </div>
         </form>
     </div>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
+        document.getElementById('register-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const username = document.getElementById('login-username').value;
-            const password = document.getElementById('login-password').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
 
-            const storedUsername = localStorage.getItem('username');
-            const storedPassword = localStorage.getItem('password');
+            if (password === confirmPassword) {
+                // Save username and password to localStorage
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
 
-            if (username === storedUsername && password === storedPassword) {
-                alert('Login successful!');
-                window.location.href = './Product.html'; 
-                // Redirect or show the next page
+                alert('Registration successful! Redirecting to login...');
+
+                // ✅ Redirect to login page
+                window.location.href = "./index.html";
+
             } else {
-                alert('Incorrect username or password!');
+                alert('Passwords do not match!');
             }
         });
     </script>
 
-    <style>
 
-        * {
+    <style>
+        
+
+        *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -72,13 +80,12 @@
         .main {
             position: relative;
             width: 420px;
-            background-color: rgba(20, 5, 10, 0.3); 
+            background-color: rgba(20, 5, 10, 0.3);
             color: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
-
 
         .main h1 {
             font-size: 36px;
@@ -88,7 +95,7 @@
         .main .input-box {
             width: 100%;
             height: 50px;
-            margin: 30px 0;
+            margin: 15px 0;
         }
 
         .input-box input {
@@ -108,26 +115,21 @@
             color: aliceblue;
         }
 
-        .remember-forgot {
-            display: flex;
-            justify-content: flex-start; 
+        .terms {
+            margin: 20px 0;
             font-size: 14.5px;
-            margin: -15px 0 15px;
         }
 
-        .remember-forgot a {
-            position: absolute; 
-            bottom: 144px;
-            right: 20px;
+        .terms a {
             color: aliceblue;
             text-decoration: none;
         }
 
-        .remember-forgot a:hover {
+        .terms a:hover {
             text-decoration: underline;
         }
 
-        .remember-forgot label input {
+        .terms label input {
             accent-color: white;
             margin-right: 3px;
         }
@@ -148,21 +150,20 @@
             background-color: rgba(255, 255, 255, 0.8);
         }
 
-        .register-link {
-            
+        .login-link {
             text-align: center;
             margin-top: 20px;
         }
 
-        .regiseter-link a {
+        .login-link a {
             color: white;
             text-decoration: none;
         }
 
-        .regiseter-link a:hover {
+        .login-link a:hover {
             text-decoration: underline;
         }
-        
+
     </style>
 </body>
 </html>
