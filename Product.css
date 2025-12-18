@@ -1,77 +1,173 @@
-.navbar-nav{
-    
-    margin-left: 75%;
-    margin-top: -65px;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-.nav-link span{
-
-    color: white ; 
+/* BODY BACKGROUND */
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.55)
+    ),
+    url("./Image/Image 4.jpg") no-repeat center center / cover;
 }
 
-.navbar-brand span{
+/* NAVBAR */
+.navbar {
+    padding: 10px 20px;
+}
 
+.navbar-brand {
     font-weight: 700;
     font-style: italic;
-    color: white;
-}
-.navbar-nav a{
-
     color: white !important;
 }
 
-.searchbox {
-
-    margin-left: 33%;
+.navbar-brand img {
+    border-radius: 50%;
 }
 
-.form-control{
+/* MENU LINKS */
+.navbar-nav {
+    margin: 0 auto;
+    gap: 15px;
+}
 
-    width: 350px;
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* SEARCH BAR */
+.searchbox,
+.navbar-light .container-fluid {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.form-control {
+    width: 320px;
     border-radius: 30px;
+    padding-left: 20px;
 }
 
 .btn {
     border-radius: 30px;
 }
 
-.navbar{
-
-    margin-bottom: -7px;
+/* CAROUSEL */
+.carousel {
+    max-width: 1100px;
+    margin: 20px auto;
 }
 
-.carousel-item img{
-
-    width: 100px;
-    height: 400px;
-    margin-top: 10px;
+.carousel-item img {
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-ul .dropdown-menu{
+/* PRODUCT GRID */
+.container-fluid {
+    padding: 30px 60px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* CARD BODY */
+.card-body {
+    text-align: center;
+    color: white;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* BUTTON */
+.card .btn-warning {
+    width: 100%;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* MODAL */
+.modal-content {
+    border-radius: 15px;
+}
+
+.modal-body img {
+    border-radius: 10px;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
     background-color: black;
 }
 
-.col img{
-
-    height: 200px;
+.dropdown-menu .dropdown-item {
+    color: white;
 }
 
-.col{
-
-    margin-left: 52px;
-    margin-top: 30px;
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ffc107;
+    color: black;
 }
 
-.carousel-inner{
-    width: 1020px;
-    margin-left: 125px;
-}
+/* RESPONSIVE */
+@media (max-width: 768px) {
 
-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./Image/Image\ 4.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+    .carousel-item img {
+        height: 250px;
+    }
 
-  
+    .form-control {
+        width: 220px;
+    }
+
+    .container-fluid {
+        padding: 20px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+}

@@ -44,12 +44,18 @@
                 // Save username and password to localStorage
                 localStorage.setItem('username', username);
                 localStorage.setItem('password', password);
-                alert('Registration successful!');
+
+                alert('Registration successful! Redirecting to login...');
+
+                // ✅ Redirect to login page
+                window.location.href = "./index.html";
+
             } else {
                 alert('Passwords do not match!');
             }
         });
     </script>
+
 
     <style>
         

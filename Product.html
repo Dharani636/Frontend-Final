@@ -5,178 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flower Shop</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <link rel="icon" href="./Image/Logo.jpg">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./Product.css">
+    <link rel="icon" href="./Image/Logo.jpg">
 </head>
 <body>
 
-    <nav class="navbar navbar-light bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="./Image/Logo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            <span>Flower Shop</span>
-          </a>
-        </div>
-      </nav>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./Product.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./Cart.html">Cart</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                 <span>Contact</span> 
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Login Out</a></li>
-                  <li><a class="dropdown-item" href="#">Help</a></li>
-                  <li><a class="dropdown-item" href="#">About Us</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<!-- TOP NAV -->
+<nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">
+            <img src="./Image/Logo.jpg" width="30">
+            Flower Shop
+        </a>
+    </div>
+</nav>
 
-      <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-          <form class="searchbox d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./Image/offer1.avif" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./Image/offer2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="./Image/offer3.avif" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./Product.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./Cart.html">Cart</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 
-    <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="itemModalLabel">Item Title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="itemModalImage" src="" class="img-fluid mb-3" alt="Item Image">
-                    <p id="itemModalDescription">Item description goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning">Add to Cart</button>
-                </div>
+<!-- CARDS -->
+<div class="row container-fluid justify-content-center">
+    <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Marigold','./Image/marigold.jpg','Beautiful marigold plant',300)">
+            <img src="./Image/marigold.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>Marigold</h5>
+                <button class="btn btn-warning w-100">View</button>
             </div>
         </div>
     </div>
 
-
-    <div class="row container-fluid">
-        <div class="col">
-            <div class="card" style="width: 18rem;" onclick="showItemModal('Rose', './Image/marigold.jpg', 'Grace your space with the serene beauty of the Marigold plant, symbolizing purity and enlightenment.it brings tranquility and charm to any setting.',300)">
-                <img src="./Image/marigold.jpg" class="card-img-top" alt="Lotus">
-                <div class="card-body">
-                    <h5 class="card-title">MariGold</h5>
-                    <p class="card-text">Grace your space with the serene beauty of the Marigold plant...</p>
-                    <a href="#" class="btn btn-warning">Add Cart</a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="col">
-            <div class="card" style="width: 18rem;" onclick="showItemModal('Rose', './Image/Rose.jpg', 'Vibrant and fragrant rose plant, perfect for enhancing any garden or home decor. Easy to maintain, it blooms with stunning flowers to brighten your space.',450)">
-                <img src="./Image/Rose.jpg" class="card-img-top" alt="Rose">
-                <div class="card-body">
-                    <h5 class="card-title">Rose</h5>
-                    <p class="card-text">Vibrant and beauty of the rose plant...</p>
-                    <a href="#" class="btn btn-warning">Add Cart</a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="col">
-            <div class="card" style="width: 18rem;" onclick="showItemModal('Daisy', './Image/Daisy.jpg', 'Brighten your space with our cheerful daisy plant, featuring vibrant blooms and lush green foliage. Easy to care for and perfect for any garden or indoor decor!',150)">
-                <img src="./Image/Daisy.jpg" class="card-img-top" alt="Daisy">
-                <div class="card-body">
-                    <h5 class="card-title">Daisy</h5>
-                    <p class="card-text">Brighten your space with our cheerful daisy plant...</p>
-                    <a href="#" class="btn btn-warning">Add Cart</a>
-                </div>
+    <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Rose','./Image/Rose.jpg','Fresh rose plant',450)">
+            <img src="./Image/Rose.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>Rose</h5>
+                <button class="btn btn-warning w-100">View</button>
             </div>
         </div>
     </div>
-    
-    <div class="row container-fluid">
-        <div class="col">
-            <div class="card" style="width: 18rem;" onclick="showItemModal('Hibiscus', './Image/Hibiscus.jpg', 'Hibiscus Plant: A vibrant flowering plant known for its large, colorful blooms. Perfect for gardens, patios, or as a natural indoor décor piece.',700)">
-                <img src="./Image/Hibiscus.jpg" class="card-img-top" alt="Hibiscus">
-                <div class="card-body">
-                    <h5 class="card-title">Hibiscus</h5>
-                    <p class="card-text">Hibiscus Plant: A vibrant flowering plant...</p>
-                    <a href="#" class="btn btn-warning">Add Cart</a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="col">
-            <div class="card" style="width: 18rem;" onclick="showItemModal('Hollyhock', './Image/hollyhocks.jpg', 'The Hollyhock plant is a stunning, tall perennial known for its vibrant, colorful blooms, perfect for enhancing garden beauty. Easy to grow and maintain, it is ideal for creating a charming cottage garden look.',500)">
-                <img src="./Image/hollyhocks.jpg" class="card-img-top" alt="Hollyhock">
-                <div class="card-body">
-                    <h5 class="card-title">Hollyhock</h5>
-                    <p class="card-text">The Hollyhock plant is a stunning, tall perennial...</p>
-                    <a href="#" class="btn btn-warning">Add Cart</a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="col">
-            <div class="card" style="width: 18rem;" onclick="showItemModal('Iris', './Image/iris.jpg', 'Add a touch of elegance to your garden with our vibrant Iris plants. Known for their stunning blooms and easy care, they’re perfect for brightening any outdoor space.',1000)">
-                <img src="./Image/iris.jpg" class="card-img-top" alt="Iris">
-                <div class="card-body">
-                    <h5 class="card-title">Iris</h5>
-                    <p class="card-text">Add a touch of elegance to your garden with our vibrant Iris plants...</p>
-                    <a href="#" class="btn btn-warning">Add Cart</a>
-                </div>
+
+     <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Rose','./Image/Rose.jpg','Fresh rose plant',450)">
+            <img src="./Image/Lotus.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>Lotus</h5>
+                <button class="btn btn-warning w-100">View</button>
             </div>
         </div>
     </div>
-    
 
+    <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Rose','./Image/Rose.jpg','Fresh rose plant',450)">
+            <img src="./Image/hollyhocks.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>HollyHock</h5>
+                <button class="btn btn-warning w-100">View</button>
+            </div>
+        </div>
+    </div>
 
-    
-    <script src="./Product.js"></script>
+    <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Rose','./Image/Rose.jpg','Fresh rose plant',450)">
+            <img src="./Image/Sunflower.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>Sunflower</h5>
+                <button class="btn btn-warning w-100">View</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Rose','./Image/Rose.jpg','Fresh rose plant',450)">
+            <img src="./Image/Tulip.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>Tulip</h5>
+                <button class="btn btn-warning w-100">View</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Rose','./Image/Rose.jpg','Fresh rose plant',450)">
+            <img src="./Image/poppy.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>Poppy</h5>
+                <button class="btn btn-warning w-100">View</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card"
+            onclick="showItemModal('Rose','./Image/Rose.jpg','Fresh rose plant',450)">
+            <img src="./Image/Daisy.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5>Daisy</h5>
+                <button class="btn btn-warning w-100">View</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="itemModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="itemModalLabel"></h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img id="itemModalImage" class="img-fluid mb-3">
+                <p id="itemModalDescription"></p>
+                <p id="itemModalPrice" class="fw-bold"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-warning" id="addToCartBtn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./Product.js"></script>
 </body>
 </html>
